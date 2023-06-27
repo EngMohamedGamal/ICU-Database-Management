@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="master.css" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICU Management System</title>
+  <style>
+    /* CSS CODE*/
+    html {
+      /* gradient only background */
+      /* background: linear-gradient(to right, #0074D9, #6600cc); */
+      background-image: url("ICU3.jpg");
+      background-size: cover;
+    }
+    .dropdown select {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      width: 200px;
+    }
+
+    #icu-id option[disabled] {
+      color: gray;
+    }
+
+    .dropdown select:hover {
+     }
+
+    .dropdown select:focus {
+      outline: none;
+      box-shadow: 0 0 5px #00b4d8;
+    }
+    body {
+      font-family: "poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-self: center;
+      margin: 20px;
+      font-family: "poppins", sans-serif;
+    }
+
+    .toggle-container {
+      display: flex;
+      justify-content: center;
+      align-self: center;
+      margin: 20px;
+      font-family: "poppins", sans-serif;
+    }
+
+
+    .box {
+      width: 30%;
+      color: white;
+      background-color: #00b4d8;
+      padding: 20px;
+      margin-right: 20px;
+      box-sizing: border-box;
+      text-align: center;
+      border-radius: 10px;
+      opacity: 0; 
+      transform: translateY(40px); 
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; 
+      font-family: "poppins", sans-serif;
+    }
+
+    .toggle-box {
+      width: 30%;
+      color: white;
+      background-color: #00b4d8;
+      padding: 20px;
+      margin-right: 20px;
+      box-sizing: border-box;
+      text-align: center;
+      border-radius: 10px;
+      transform: translateY(40px); 
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; 
+      font-family: "poppins", sans-serif;
+    }
+
+    /* .website-bar {
+      background-color: #3386FF;
+      color: #FFFFFF;
+      display: flex;
+      height: 50px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      transform: translateY(0); 
+      transition: transform 0.5s; 
+    }
+
+    .website-bar h1 {
+      font-weight: bold;
+      margin-right: 20px;
+      margin-left: 20px;
+    } */
+
+    /* .contact-button {
+      background-color: #3386FF;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+    } */
+
+    .toggle-list {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      width: 400px;
+      height: 60px;
+      margin: 90px auto;
+      display: block;
+      font-family: "poppins", sans-serif;
+    }
+
+    .box p {
+      text-align: center;
+      font-size: 2em;
+      font-family: "poppins", sans-serif;
+    }
+
+    /* ANIMATIONS CODE*/
+    .box.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .box.pop-out {
+      animation: popOut 0.3s forwards;
+    }
+
+    @keyframes popOut {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(0);
+      }
+    }
+
+    .box.fade-in {
+      animation: fadeIn 0.3s forwards;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .box.updated {
+      animation: updated 0.3s forwards;
+    }
+
+    @keyframes updated {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <!--HTML CODE -->
+  <!-- <div class="website-bar">
+    <h1>ICU</h1>
+    <button class="contact-button">Contact Us</button>
+  </div> -->
+
+  <div class="container">
+    <div class="box">
+      <h2>Available Beds</h2>
+      <p>2</p>
+    </div>
+
+    <div class="box">
+      <h2>Capacity</h2>
+      <p>6</p>
+    </div>
+
+    <div class="box">
+      <h2>Number of Patients</h2>
+      <p>4</p>
+    </div>
+  </div>
+  
+
+  <div class="toggle-container">
+    <div class="toggle-box">
+      <h2>Select ICU ID</h2>
+
+      <select id="icu-id" class="toggle-list">
+        <option value="" selected disabled></option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+      </select>
+    </div>
+  </div>
+  <!-- TOGGLE LIST -->
+
+  
+
+
+  <!-- ANIMATIONS SCRIPT CODE -->
+  <script>
+    
+    window.addEventListener('DOMContentLoaded', () => {
+      const boxes = document.querySelectorAll('.box');
+      const toggleList = document.getElementById('icu-id');
+      let isFirstSelection = true;
+
+      function slideUpBoxes() {
+        boxes.forEach(box => {
+          box.classList.remove('show', 'fade-in');
+          box.classList.add('pop-out');
+        });
+      }
+
+      function slideDownBoxes() {
+        boxes.forEach(box => {
+          box.classList.remove('pop-out');
+          box.classList.add('show', 'fade-in');
+        });
+      }
+
+      function updateBoxes() {
+        boxes.forEach(box => {
+          box.classList.remove('updated');
+          void box.offsetWidth; 
+          box.classList.add('updated');
+        });
+      }
+
+      setTimeout(() => {
+        slideDownBoxes();
+      }, 500);
+
+      toggleList.addEventListener('input', handleChange);
+      toggleList.addEventListener('change', handleChange);
+
+      function handleChange() {
+        slideUpBoxes();
+        setTimeout(() => {
+          const selectedValue = toggleList.value;
+          boxes.forEach(box => {
+            box.querySelector('p').textContent = selectedValue;
+          });
+          if (!isFirstSelection) {
+            updateBoxes();
+          } else {
+            isFirstSelection = false;
+          }
+          setTimeout(() => {
+            slideDownBoxes();
+          }, 300); 
+        }, 300); 
+      }
+    });
+  </script>
+</body>
+</html>

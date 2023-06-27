@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="check.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+</head>
+<body>
+    <div class="bgcontainer">
+        <div class="container">
+            <table id="example" class="table table-striped" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>TSSN</th>
+                        <th>Nurse Name</th>
+                        <th>Department</th>
+                        <th>Delete Nurse</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script defer src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script defer src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script defer src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    <script defer>
+      const data = [
+        {
+          TSSN: "202030",
+          Nurse_Name: "Salma Mohamed",
+          Department: "Medical",
+        },
+        {
+          TSSN: "202032",
+          Nurse_Name: "Mona Mohamed",
+          Department: "Surgical",
+        },
+        {
+          TSSN: "202033",
+          Nurse_Name: "Mona Mohamed",
+          Department: "Surgical",
+        },
+        {
+          TSSN: "202034",
+          Nurse_Name: "Reem Mohamed",
+          Department: "Surgical",
+        },
+        {
+          TSSN: "202035",
+          Nurse_Name: "Mariam Mohamed",
+          Department: "Cardiac",
+        },
+      ];
+
+      function display() {
+        var cartona = "";
+        for (var i = 0; i < data.length; i++) {
+          cartona += `
+            <tr>
+              <td>${data[i].TSSN}</td>
+              <td>${data[i].Nurse_Name}</td>
+              <td>${data[i].Department}</td>
+              <td>
+                <button class="delete-button">Delete</button>
+              </td>
+            </tr>`;
+        }
+        // Add the generated rows to the tbody of the table
+        document.getElementById("tbody").innerHTML = cartona;
+
+        // Add event listeners to the delete buttons
+        var deleteButtons = document.querySelectorAll(".delete-button");
+        deleteButtons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            deleteItem();
+          });
+        });
+      }
+
+      // Call the display function to populate the table
+      display();
+
+      $(document).ready(function () {
+        $("#example").DataTable();
+      });
+    </script>
+</body>
+</html>

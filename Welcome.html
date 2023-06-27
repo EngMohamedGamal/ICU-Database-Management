@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="bootstrap.min.css" />
+  <link rel="stylesheet" href="Welcome.css" />
+  <link rel="stylesheet" href="master.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <title>Welcome page</title>
+</head>
+<body>
+  <div class="home">
+    <div class="layer">
+      <nav>
+        <a href="Welcome.html">
+          <label class="logo">ICU</label>
+        </a>
+        
+        <div class="burger-menu">
+          <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+          <label for="menu-toggle" class="burger"><span></span></label>
+        <div class="navbar-menu">
+          <a href="mailto:Ahmed.taha02@eng-st.cu.edu.eg"><i class="fa-solid fa-phone"></i> Contact Us</a>
+          <a href="doctor_check.html"><i class="fa-solid fa-user-doctor"></i> Doctors</a>
+          <a href="nurse_check.html"><i class="fa-sharp fa-solid fa-user-nurse"></i> Nurses</a>
+          <a href="Login.html"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
+        </div>
+      </nav>
+      <div class="main-home container">
+        <div class="row">
+          <div class="button1 col-12 justify-content-center">
+            <button type="button" class="btn btn-primary" style="--delay: 0;" onclick="window.location.href='add patient.html'">
+              New Patient
+            </button>
+            <button type="button" class="btn btn-primary" style="--delay: 1;" onclick="window.location.href='check.html'">
+              Patient Details
+            </button>
+            <button type="button" class="btn btn-primary" style="--delay: 2;" onclick="window.location.href='rooms.html'">
+              Available Rooms
+            </button>
+          </div>
+          
+          
+          <div class="main-inner-home col-6">
+            <h2 style="color: #00b4d8; margin-bottom: 0;">What We do?</h2>
+            <p>
+              We employ state-of-the-art medical technology and equipment to closely monitor vital signs, such
+              as heart rate, blood pressure, and oxygen levels, allowing us to promptly detect any changes or
+              complications. We also utilize advanced diagnostic tools to assess the condition of our patients and
+              guide our treatment decisions.
+            </p>
+          </div>
+          <div class="image col-6">
+            <img src="ICU1.jpg" alt="" />
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+  <script src="welcome.js"></script>
+</body>
+</html>

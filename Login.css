@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --primary-color: #90e0ef;
+  --secondary-color: #00b4d8;
+  --tertiary-color: #0077b6;
+  --gray-color: #b0b0b0;
+}
+
+
+* {
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes popOut {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.box {
+  background-color: rgba(255, 255, 255, 0.846);
+  border-radius: 10px;
+  padding: 45px;
+  width: 375px;
+  max-width: 95%;
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.1);
+  animation: popOut 0.3s ease-in-out;
+}
+
+
+@media (max-width: 480px) {
+  .box {
+    padding: 75px 25px;
+  }
+}
+
+.box h1 {
+  font-size: 35px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.box form label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.box form div {
+  display: flex;
+  align-items: center;
+}
+
+.box form div:hover {
+  border-bottom-color: var(--secondary-color);
+}
+
+.box form div:first-of-type {
+  margin-bottom: 10px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.115);
+  backdrop-filter: blur(0);
+  z-index: 9999;
+  transition: backdrop-filter 0.5s;
+}
+
+.overlay.blur {
+  backdrop-filter: blur(5px);
+}
+
+.pop-up {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  z-index: 10000;
+  text-align: center;
+  animation: slideUp 0.5s ease;
+}
+
+
+.pop-up-title {
+  font-weight: bold;
+  font-size: 18px;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  background-color: #00b4d8;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-top: 0;
+}
+
+.pop-up-message {
+  color: #000;
+  font-size: 14;
+  /* font-weight: bold; */
+  margin: 10px 2px;
+}
+
+.pop-up-button {
+  background-color: #00b4d8;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  width: 33.33%;
+  float: right;
+  margin: 5px;
+  border: none; /* Add this line to remove the border */
+}
+@keyframes slideUp {
+  from {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+
+
+
+.box form div i {
+  font-size: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: var(--gray-color);
+}
+
+.box form div:hover i {
+  color: var(--secondary-color);
+}
+
+.box form div input::placeholder {
+  opacity: 1;
+  color: var(--gray-color);
+  font-size: 12px;
+  
+}
+
+.box a:hover {
+  color: var(--secondary-color);
+}
+
+
+.box form input[type="submit"]:hover {
+  background-color: var(--tertiary-color);
+  cursor: pointer;
+  
+}
+
+.bgcontainer {
+  height: 100%;
+  width: 100%;
+  background-image: url("ICU3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit:link,
+.submit:active {
+  background-color: #00b4d8;
+  color: white;
+  text-decoration: none;
+  padding: 10px 50px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  transition: margin 0.3s ease;
+}
+
+
+
+
+.submit:hover,
+.submit:visited {
+  color: white !important;
+  text-decoration: none;
+  margin: 0 4px;
+  transition: margin 0.3s ease-in-out;
+}
+
+.submit:hover {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.username {
+  font-size: 12px;
+  outline: none;
+  border: none;
+  padding: 10px 10px;
+  min-width: 0;
+  flex: 1;
+  background-color: tra;
+}
+
+.textInput {
+  background-color: white;
+  border-radius: 15px;
+  width: 100%;
+  position: relative;
+  display: inline-block;
+}
+
+.textInput input {
+  padding-right: 30px; /* Adjust the padding as needed */
+}
+
+.textInput i {
+  position: absolute;
+  top: 50%;
+  right: 5px; /* Adjust the position as needed */
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #000;
+}
+
+.textInput i:hover {
+  color: #000; /* Set the desired color */
+}
+
+.textInput i.active {
+  color: #000; /* Set the desired color */
+}
+
+input[type="text"],
+input[type="password"] {
+  background: transparent;
+  border: none;
+}
+
+.label {
+  font-size: 10px;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+#errorMessage {
+  font-size: 12px;
+  font-weight: 500;
+  margin: 10px 10px;
+  color: red;
+  display: inline-block;
+  padding: 5px;
+}

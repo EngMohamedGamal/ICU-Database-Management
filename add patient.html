@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="add patient.css" />
+    <link rel="stylesheet" href="master.css" />
+    <title>Add patient</title>
+  </head>
+
+  <body>
+    <div class="bgcontainer">
+      <div class="container">
+        <div class="title">Add patient form</div>
+        <form action="#">
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">First Name</span>
+              <input class="FirstName" type="text" placeholder="Enter your first name" required />
+            </div>
+
+            <div class="input-box">
+              <span class="details">Last Name</span>
+              <input class="LastName" type="text" placeholder="Enter your Last Name" required />
+            </div>
+
+            <div class="input-box">
+              <span class="details">SSN</span>
+              <input class="SSN" type="text" placeholder="Enter your SSN" required />
+            </div>
+
+            <div class="input-box">
+              <span class="details">Address</span>
+              <input class="Address" type="text" placeholder="Enter your Address" required />
+            </div>
+            <div class="input-box">
+              <span class="details">Date-of-birth</span>
+              <input class="DateOfBirth" type="date" placeholder="Enter your Date of Birth" required />
+            </div>
+
+
+            <div class="input-box">
+              <span class="details">Department</span>
+              <select id="departmentSelect" required>
+                <option value="" disabled selected>Your department</option>
+                <option value="option1">Surgical</option>
+                <option value="option2">Medical</option>
+                <option value="option3">Neonatal</option>
+                <option value="option4">Cardiac</option>
+              </select>
+            </div>
+
+
+            <div class="input-box">
+              <span class="details">Room Number</span>
+              <select id="roomSelect" required>
+                <option value="" disabled selected>Room no.</option>
+                <option value="option1">1</option>
+                <option value="option2">2</option>
+                <option value="option3">3</option>
+                <option value="option4">4</option>
+                <option value="option1">5</option>
+                <option value="option2">6</option>
+                <option value="option3">7</option>
+                <option value="option4">8</option>
+              </select>
+            </div>
+
+            <div class="input-box">
+              <span class="details">Phone Number</span>
+              <input
+                type="text" class="PhoneNumber"
+                placeholder="Enter your Phone Number"
+                required
+              />
+            </div>
+          </div>
+          <div class="gender-details">
+            <input type="radio" name="gender" id="dot-1" />
+            <input type="radio" name="gender" id="dot-2" />
+            <span class="gender-title">Gender</span>
+            <div class="category">
+              <label for="dot-1">
+                <span class="dot one"></span>
+                <span class="gender">Male</span>
+              </label>
+              <label for="dot-2">
+                <span class="dot two"></span>
+                <span class="gender">Female</span>
+              </label>
+            </div>
+
+            <div class="errorMessage">  </div>
+            <div>
+              <a href="#" class="addbutton"> Add Patient</a>
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </body>
+
+  <script src="add patient.js"></script>
+</html>

@@ -1,0 +1,260 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.home {
+  background-image: url(ICU3.jpg);
+  height: 100vh;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.863); /* Set white color overlay with opacity */
+  filter: blur(3px); /* Add blur effect to the pseudo-element */
+}
+
+
+.layer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.3); /* Set white color overlay with opacity */
+}
+
+.home .layer {
+  background-color: transparent;
+}
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #00b4d8;
+  height: 60px; /* Adjust the height as needed */
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.navbar-menu {
+  /* Existing CSS rules */
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+  /* Additional CSS rules for fade-in effect */
+  transition-delay: 0s, 0s; /* Reset the transition delay */
+}
+
+.menu-toggle:checked ~ .navbar-menu {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s, 0s; /* Reset the transition delay */
+}
+
+
+.logo {
+  color: white;
+  font-size: 40px;
+  line-height: 80px;
+  padding: 0 20px;
+  font-weight: bold;
+}
+
+input.menu-toggle {
+  display: none;
+}
+
+.burger-menu {
+  display: flex;
+  align-items: center;
+}
+
+.burger {
+  cursor: pointer;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 20px; /* Add margin to the right side */
+  position: relative; /* Add position relative */
+}
+
+.burger span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  top: 50%;
+  left: 0; /* Adjust left position to align horizontally */
+  transform: translate(0, -50%); /* Adjust vertical alignment */
+}
+
+.burger span:before,
+.burger span:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.burger span:before {
+  top: -10px;
+}
+
+.burger span:after {
+  bottom: -10px;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu-toggle:checked ~ .navbar-menu {
+  visibility: visible;
+  opacity: 1;
+  background: #00b4d8;
+}
+
+/* Rest of the CSS remains the same */
+.main-home {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Change align-items to flex-start */
+  height: calc(100vh - 80px); /* Subtract the height of the navbar */
+  width: 90%;
+  position: absolute;
+  top: 80px; /* Set the top position to match the height of the navbar */
+  left: 0;
+  right: 0;
+}
+
+
+.navbar-menu {
+  border-bottom-left-radius: 10%;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #00b4d8;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 9998;
+}
+
+.navbar-menu a {
+  display: block;
+  padding: 7px 13px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn {
+  font-weight: bold;
+  transform: scale(3); /* Triple the size of the button */
+  margin: 40px
+}
+
+
+.main-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.main-inner-home {
+  width: 50%;
+  padding-right: 10px;
+}
+
+.image {
+  width: 50%;
+  margin-top: 50px;
+}
+
+.image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.button1 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 2vh;
+  text-align: center;
+  gap: 10px; /* Reduce the gap between buttons */
+}
+
+.button1 button {
+  opacity: 0;
+  border-radius: 25px;
+  border: none;
+  animation: slideIn 0.25s forwards;
+  animation-delay: calc(0.25s * var(--delay)); /* Change animation delay */
+  background-color: #00b4d8; /* Set the background color */
+  padding: 35px;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+h2 {
+  font-size: 50px;
+  font-family: sans-serif;
+  text-align: left;
+  color: #ff8474;
+  margin-top: 50px;
+  margin-bottom: 0; /* Add this line to remove the bottom margin */
+}
+
+
+p {
+  font-size: 20px;
+  color: #333;
+  margin-top: 20px;
+}

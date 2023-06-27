@@ -1,0 +1,12 @@
+body {
+    animation: transitionIn 0.5s;
+}
+
+@keyframes transitionIn {
+    from {
+            opacity:0.5 ;
+    }
+    to {
+        opacity:1;
+    }
+}
